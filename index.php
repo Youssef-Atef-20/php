@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $pass = $_POST['pass'];
 
-    $stmt = mysqli_prepare($connection, "INSERT INTO Admin (Name, Pass) VALUES (?, ?)");
+    $stmt = mysqli_prepare($connection, "INSERT INTO admin (Name, Pass) VALUES (?, ?)");
 
     mysqli_stmt_bind_param($stmt, "ss", $name, $pass);
 
