@@ -1,72 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            margin: 0;
+        }
 
-/* الكونتينر */
-main {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
+        form {
+            width: 300px;
+            margin: 30px auto;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-/* الفورم */
-form {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    width: 300px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        input {
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+        }
 
-form input {
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
+        button {
+            padding: 10px;
+            background: #22c55e;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
 
-form button {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #22c55e;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #1e293b;
+        }
 
-form button:hover {
-    background: #16a34a;
-}
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
 
-/* الجدول */
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: #1e293b;
-    border-radius: 10px;
-    overflow: hidden;
-}
+        th {
+            background: #22c55e;
+        }
 
-table th {
-    background: #22c55e;
-    padding: 10px;
-}
-
-table td {
-    padding: 10px;
-    text-align: center;
-}
-
-table tr:nth-child(even) {
-    background: #334155;
-}
+        tr:nth-child(even) {
+            background: #334155;
+        }
