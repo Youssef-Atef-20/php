@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 }
 
 /* ====== SELECT ====== */
-$sql = "SELECT * FROM Admin";
+$sql = "SELECT * FROM admin";
 $result = mysqli_query($connection, $sql);
 
 if (!$result) {
