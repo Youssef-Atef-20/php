@@ -7,7 +7,7 @@ $connection = mysqli_connect(
     'sql203.infinityfree.com',      // hostname من InfinityFree
     'if0_41784483',                // username
     'Yousefatef1212',              // password
-    'if0_41784483_test2'           // database (بالـ prefix)
+    'if0_41784483_php'           // database (بالـ prefix)
 );
 
 if (!$connection) {
