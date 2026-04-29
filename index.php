@@ -56,7 +56,7 @@ $tables = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <main>
+    
 
         <!-- ====== FORM ====== -->
         <form method="POST">
@@ -87,7 +87,7 @@ $tables = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </tr>
             <?php endforeach; ?>
         </table>
-    </main>
+
 
 
 </body>
