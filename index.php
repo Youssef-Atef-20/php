@@ -29,11 +29,10 @@ if (isset($_POST['submit'])) {
 <?php
 
 
-$connection = mysqli_connect('localhost', 'youssef', 'youssef', 'test2');
-
+$connection = mysqli_connect('sql203.infinityfree.com', 'if0_41784483', 'Yousefatef1212', 'test2');
 if (!$connection) {
-    echo 'Connection Error ' . mysqli_connect_error();
-}
+    die("Connection failed: " . mysqli_connect_error());
+} 
 
 
 $sql = 'SELECT * FROM ADMIN';
