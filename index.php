@@ -4,32 +4,42 @@ error_reporting(E_ALL);
 
 /* ====== DB CONNECTION ====== */
 $connection = mysqli_connect(
-    'sql203.infinityfree.com',      // hostname من InfinityFree
-    'if0_41784483',                // username
-    'Yousefatef1212',              // password
-    'if0_41784483_php'           // database (بالـ prefix)
+    'sql203.infinityfree.com',
+    'if0_41784483',
+    'Yousefatef1212',
+    'if0_41784483_php'
 );
 
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-/* ====== INSERT ====== */
+/* ====== INSERT (Prepared Statement 🔒) ====== */
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($connection, $_POST['name']);
-    $pass = mysqli_real_escape_string($connection, $_POST['pass']);
 
-    $sql = "INSERT INTO Admin (Name, Pass) VALUES ('$name', '$pass')";
-    mysqli_query($connection, $sql);
+    $name = $_POST['name'];
+    $pass = $_POST['pass'];
 
-    // refresh عشان تشوف البيانات الجديدة
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
+    $stmt = mysqli_prepare($connection, "INSERT INTO Admin (Name, Pass) VALUES (?, ?)");
+
+    mysqli_stmt_bind_param($stmt, "ss", $name, $pass);
+
+    if (mysqli_stmt_execute($stmt)) {
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo "Insert Error: " . mysqli_error($connection);
+    }
 }
 
 /* ====== SELECT ====== */
 $sql = "SELECT * FROM Admin";
 $result = mysqli_query($connection, $sql);
+
+if (!$result) {
+    die("Query Error: " . mysqli_error($connection));
+}
+
 $tables = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
